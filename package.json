@@ -3,7 +3,19 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "lint": "./node_modules/.bin/eslint ."
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "no-console": "off",
+      "strict": "off",
+      "arrow-body-style": "off",
+      "object-shorthand": "off"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
