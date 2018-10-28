@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
@@ -12,6 +11,8 @@ import TextField from '@material-ui/core/TextField';
 import { InputAdornment, IconButton } from '@material-ui/core';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import store from '../../store';
+import { USER_LOGIN, USER_LOGOUT } from '../constants/action-types';
 
 const styles = theme => ({
   card: {
@@ -45,6 +46,19 @@ class LoginCard extends React.Component {
 
   handleClickShowPassword = () => {
     this.setState(state => ({ showPassword: !state.showPassword }));
+  };
+
+  handleLogin = () => {
+    if (true) {
+      // TODO: handle login
+      store.dispatch(USER_LOGIN);
+    }
+  };
+
+  handleLogout = () => {
+    if (true) {
+      // TODO: handle login
+    }
   };
 
   render() {
@@ -92,7 +106,11 @@ class LoginCard extends React.Component {
           />
         </CardContent>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button
+            size="small"
+            color="primary"
+            onClick="console.log('user logged in')"
+          >
             Login
           </Button>
         </CardActions>

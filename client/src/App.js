@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LoginCard from './lib/components/login_card';
 import './App.css';
 
+/*
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -31,6 +32,7 @@ class Clock extends React.Component {
     );
   }
 }
+*/
 
 class App extends Component {
   render() {
