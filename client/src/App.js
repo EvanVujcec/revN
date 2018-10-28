@@ -5,7 +5,7 @@ import './App.css';
 class Clock extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { date: new Date() };
+    this.state = { date: new Date(), isLoggedIn: false };
   }
 
   componentDidMount() {
