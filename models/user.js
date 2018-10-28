@@ -1,4 +1,7 @@
 /* eslint-disable no-use-before-define */
+/* eslint no-param-reassign: ["error", { "props": false }] */
+/* eslint-disable no-underscore-dangle */ // Needed for sequelize
+/* http://docs.sequelizejs.com/manual/tutorial/associations.html#belongs-to-many-associations */
 
 'use strict';
 
