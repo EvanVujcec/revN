@@ -58,6 +58,11 @@ module.exports = (sequelize, DataTypes) => {
             as: 'user_id',
             through: models.Attendance,
         });
+
+        models.User.belongsToMany(models.Organization, {
+            as: 'user_id',
+            through: models.UserOrganization,
+        })
     };
 
     /**
