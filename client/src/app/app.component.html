@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <div id="login" *ngIf="!user.isLoggedIn">
+    <form id="login-form">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Username">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Password">
+        </mat-form-field>
+      </div>
+      <button mat-button>Login</button>
+    </form>
+  </div>
+  <div id="user-info">
+    <h3>Organizations</h3>
+    <mat-list>
+      <mat-list-item (click)="setOrg(org.name)" *ngFor="let org of orgs"> {{ org.name }} </mat-list-item>
+    </mat-list>
+  </div>
+  <div id="org-info">
+    <h3>Events</h3>
+    <mat-list>
+      <mat-list-item (click)="setEvent(event.name)" *ngFor="let event of events"> {{ event.name }} </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+<router-outlet></router-outlet>
