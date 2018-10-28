@@ -105,9 +105,11 @@ module.exports = (sequelize, DataTypes) => {
             through: models.Attendance,
             hooks: true,
         });
+        //location_id - id of the location the event is to be held in
+        models.Event.hasOne( models.Location, { foreignKey: 'location_id'});
         // created_by - id of the user who created the event
         models.Event.belongsTo(models.User, { foreignKey: 'created_by'});
     };
 
     return Event;
-}
+};

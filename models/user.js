@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
     User.associate = (models) => {
         // Associations are defined here
         models.User.belongsToMany(models.Event, {
-            as: 'member_id',
+            as: 'user_id',
             through: models.Attendance,
         });
     };
@@ -62,19 +62,19 @@ module.exports = (sequelize, DataTypes) => {
      * @param password - the plaintext password to be hashed
      * @return promise function(hash) = password hash
      */
-    Member.generatePasswordHash = (password) => {
+    User.generatePasswordHash = (password) => {
         return bcrypt.hash(password, saltRounds);
     };
 
     /**
      * Compare password hash - returns promise of result
      * @param password - the plaintext password to be compared
-     * @param member - the member to compare the hashed password to
+     * @param user - the user to compare the hashed password to
      * @return promise function(res) = true/false
      */
-    Member.comparePassword = (password, member) => {
-        return bcrypt.compare(password, member.password);
+    User.comparePassword = (password, user) => {
+        return bcrypt.compare(password, user.password);
     };
 
-  return Member;
-}
+  return User;
+};
