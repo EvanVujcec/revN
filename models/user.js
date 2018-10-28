@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         },
 
     }, {
-        // All autocreated table names will be underscored, not camelcase
+        // All autocreated table names will be underscored, not camel case
         underscored: true,
     });
 
