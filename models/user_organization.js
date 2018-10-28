@@ -6,23 +6,30 @@
 'use strict'; 
 
 module.exports = (sequelize, DataTypes) => {
-    const Location = sequelize.define('Location', {
-        longitude: {
-            type: DataTypes.FLOAT(10,6),
+    const UserOrganization = sequelize.define('UserOrganization', {
+        owner: {
+            type: DataType.BOOLEAN,
             allowNull: false,
+            defaultValue: false,
         },
-        latitude: {
-            type: DataTypes.FLOAT(10,6),
+        officer: {
+            type: DataType.BOOLEAN,
             allowNull: false,
+            defaultValue: false,
         },
+        // This also has references to an organization and a user - auto added as part of
+        // the association process in the organization and user model definitions
+        // They are:
+        // organization_id - int(11)
+        // user_id - int(11)
     }, {
         // set so that all autocreated table names are underscored instead of camel cased
         underscored: true,
     });
 
-    Location.associate = (/* models */) => {
+    UserOrganization.associate = (/* models */) => {
         // associations can be defined here
     };
 
-    return Location;
+    return UserOrganization;
 };

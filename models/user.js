@@ -1,4 +1,7 @@
 /* eslint-disable no-use-before-define */
+/* eslint no-param-reassign: ["error", { "props": false }] */
+/* eslint-disable no-underscore-dangle */ // Needed for sequelize
+/* http://docs.sequelizejs.com/manual/tutorial/associations.html#belongs-to-many-associations */
 
 'use strict';
 
@@ -45,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         },
 
     }, {
-        // All autocreated table names will be underscored, not camelcase
+        // All autocreated table names will be underscored, not camel case
         underscored: true,
     });
 
@@ -55,6 +58,11 @@ module.exports = (sequelize, DataTypes) => {
             as: 'user_id',
             through: models.Attendance,
         });
+
+        models.User.belongsToMany(models.Organization, {
+            as: 'user_id',
+            through: models.UserOrganization,
+        })
     };
 
     /**
