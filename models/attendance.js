@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
         // the association process in the event and user model definitions
         // They are:
         // event_id - int(11)
-        // user - int(11)
+        // user_id - int(11)
     }, {
         // set so that all autocreated table names are underscored instead of camel cased
         underscored: true,
@@ -81,7 +81,7 @@ module.exports = (sequelize, DataTypes) => {
                 options.individualHooks = true;
             },
 
-        }
+        },
     });
 
     Attendance.associate = (/* models */) => {
